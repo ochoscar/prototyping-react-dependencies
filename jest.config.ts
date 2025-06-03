@@ -1,0 +1,35 @@
+export default {
+  testEnvironment: 'jsdom',
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
+  },
+  transformIgnorePatterns: [
+    '/node_modules/(?!(react-dnd|react-dnd-html5-backend|dnd-core|@react-dnd|react-dnd-touch-backend)/)',
+  ],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  moduleNameMapper: {
+    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/fileMock.js',
+    '\\.(css|scss|less|sass)$': '<rootDir>/styleMock.js',
+    '^@pages/(.*)$': '<rootDir>/src/pages/$1',
+    '^@services/(.*)$': '<rootDir>/src/services/$1',
+    '^@components/(.*)$': '<rootDir>/src/components/$1',
+    '^@myTypes/(.*)$': '<rootDir>/src/types/$1',
+    '^@src/(.*)$': '<rootDir>/src/$1',
+    '^@assets/(.*)$': '<rootDir>/src/assets/$1',
+    '^@fullcalendar/(.*)$': 'jest-transform-stub',
+  },
+  collectCoverage: false,
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/**/*.test.{js,jsx,ts,tsx}',
+    '!src/**/*.{d.ts}',
+    '!src/serviceWorker.js',
+    '!src/index.js',
+    '!src/main.tsx',
+    '!src/App.tsx',
+    '!src/i18n.ts',
+  ],
+  coverageDirectory: 'coverage',
+  coverageReporters: ['lcov', 'text-summary'],
+};
