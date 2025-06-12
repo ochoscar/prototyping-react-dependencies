@@ -1,4 +1,4 @@
-import DefaultTopLevel from "../Dependencies.tsx";
+import DefaultTopLevel from "./Dependencies.tsx";
 
 const App = () => <DefaultTopLevel></DefaultTopLevel>
 

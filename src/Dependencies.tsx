@@ -1,4 +1,4 @@
-import TopLevel from "./src/top/TopLevel.tsx";
+import TopLevel from "./top/TopLevel.tsx";
 
 const DefaultTopLevel = () => <TopLevel></TopLevel>
 
